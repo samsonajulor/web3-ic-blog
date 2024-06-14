@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "web3-ic-blog-backend": {
+      "main": "src/web3-ic-blog-backend/main.mo",
+      "type": "motoko"
+    },
+    "web3-ic-blog-frontend": {
+      "dependencies": [
+        "web3-ic-blog-backend"
+      ],
+      "source": [
+        "src/web3-ic-blog-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "web3-ic-blog-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
