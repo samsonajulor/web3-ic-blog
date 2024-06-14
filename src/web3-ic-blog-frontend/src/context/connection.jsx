@@ -4,7 +4,7 @@ import { defaultReadonlyChainId, networkInfoMap } from '../constants';
 import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 
-const Connection = createContext();
+export const Connection = createContext();
 
 const ConnectionProvider = ({ children }) => {
   const [account, setAccount] = useState();
@@ -119,7 +119,5 @@ const ConnectionProvider = ({ children }) => {
     </Connection.Provider>
   );
 };
-
-export const useConnection = () => useContext(Connection);
 
 export default ConnectionProvider;

@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
-import { useConnection } from '../context/connection';
+import { useEffect, useContext } from 'react';
+import { Connection } from '../context/connection';
 import { getBlogContract } from '../utils';
 
 const useRegister = () => {
+  const useConnection = () => useContext(Connection);
   const { provider } = useConnection();
 
   useEffect(() => {

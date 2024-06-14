@@ -1,5 +1,5 @@
-import { useCallback, useState, useEffect } from 'react';
-import { useConnection } from '../context/connection';
+import { useCallback, useState, useEffect, useContext } from 'react';
+import { Connection } from '../context/connection';
 import {
   calculateGasMargin,
   getBlogContract, getMulticall2ContractWithProvider,
@@ -8,6 +8,7 @@ import {
 import { blogContractAddress } from '../constants/addresses';
 
 const usePost = (id) => {
+  const useConnection = () => useContext(Connection);
     const [post, setPost] = useState(null);
     const [state, setState] = useState("LOADING");
   const { provider } = useConnection();

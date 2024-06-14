@@ -17,6 +17,4 @@ const BlogProvider = ({ children }) => {
   );
 };
 
-export const useBlog = () => useContext(Blog);
-
 export default BlogProvider;

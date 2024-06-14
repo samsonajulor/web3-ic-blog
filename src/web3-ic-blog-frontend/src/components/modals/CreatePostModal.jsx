@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
-import { useConnection } from '../../context/connection';
+import { Connection } from '../../context/connection';
 import useCreatePost from '../../hooks/useCreatePost';
 
 const CreatePostModal = ({ isOpen, onClose, onSubmit }) => {
+  const useConnection = () => useContext(Connection);
   const { isActive } = useConnection();
   const [postContent, setPostContent] = useState('');
   const [sendingTx, setSendingTx] = useState(false);

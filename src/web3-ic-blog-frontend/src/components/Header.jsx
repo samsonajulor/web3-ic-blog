@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { useContext } from 'react';
 import Button from './Button';
 import Logo from './Logo';
-import { useConnection } from '../context/connection';
+import { Connection } from '../context/connection';
 import { shortenAccount } from '../utils';
 import { networkInfoMap, supportedChains } from '../constants';
 import useBalance from '../hooks/useBalance';
 import { toast } from 'react-toastify';
 
 const Header = () => {
+  const useConnection = () => useContext(Connection);
   const { account, chainId, isActive, connect, switchToChain } = useConnection();
   const ethBalance = useBalance(account);
 

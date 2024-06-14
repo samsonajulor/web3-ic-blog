@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
-import { useConnection } from '../context/connection';
+import { useCallback, useContext } from 'react';
+import { Connection } from '../context/connection';
 import { calculateGasMargin, getBlogContract } from '../utils';
 import { toast } from 'react-toastify';
 
 const useCreatePost = () => {
+  const useConnection = () => useContext(Connection);
+
   const { isActive, provider } = useConnection();
 
   const createPost = useCallback(

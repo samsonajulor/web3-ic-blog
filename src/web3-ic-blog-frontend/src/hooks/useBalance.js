@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useConnection } from '../context/connection';
+import { useEffect, useState, useContext } from 'react';
+import { Connection } from '../context/connection';
 import { ethers } from 'ethers';
 
 const useBalance = (address) => {
   const [balance, setBalance] = useState('0');
+
+  const useConnection = () => useContext(Connection);
+
   const { provider } = useConnection();
   useEffect(() => {
     if (!address) return;
